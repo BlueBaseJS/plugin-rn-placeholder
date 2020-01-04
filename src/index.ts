@@ -2,6 +2,8 @@ import { VERSION } from './version';
 import { components } from './components';
 import { createPlugin } from '@bluebase/core';
 
+export * from './components/exports';
+
 export default createPlugin({
 	description: 'Add rn-placeholder in BlueBase apps!',
 	key: '@bluebase/plugin-rn-placeholder',
