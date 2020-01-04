@@ -1,7 +1,7 @@
 <div align="center">
 	<img width=125 height=125 src="assets/common/logo.png">
   <h1>
-		BlueBase Settings App
+		rn-placeholder
 	</h1>
   <p>Add rn-placeholder in BlueBase apps!</p>
 </div>
@@ -23,7 +23,7 @@
 
 | 🌏 Web | 🖥 Electron | 📱 React Native |
 | :----: | :--------: | :-------------: |
-|   ✅   |     ✅     |       ❌        |
+|   ✅   |     ✅     |       ✅        |
 
 ## Docs
 
