@@ -1,15 +1,13 @@
 import { BlueBaseApp, getComponent } from '@bluebase/core';
-// import { PlaceholderListItemProps } from '../PlaceholderListItem';
 import { Card, List } from '@bluebase/components';
 import { Fade, Placeholder } from 'rn-placeholder';
 
-import { BlueBaseImage } from '@bluebase/core/dist/components';
+import { BlueBaseImage } from '@bluebase/components';
 import MUIplugin from '@bluebase/plugin-material-ui';
 import { PlaceholderListItemProps } from '../PlaceholderListItem';
 import Plugin from '../../../index';
 import React from 'react';
 import { View } from 'react-native';
-// import { PlaceholderListItem } from '../PlaceholderListItem';
 import storiesOf from '@bluebase/storybook-addon';
 
 const PlaceholderListItem = getComponent<PlaceholderListItemProps>('PlaceholderListItem');
