@@ -1,7 +1,6 @@
-import { View, ViewProps } from 'react-native';
-
 import { PlaceholderLine } from 'rn-placeholder';
 import React from 'react';
+import { ViewProps } from 'react-native';
 import { useTheme } from '@bluebase/core';
 
 export interface PlaceholderH3Props {
@@ -18,13 +17,14 @@ export const PlaceholderH3 = (props: PlaceholderH3Props) => {
 	const height = theme.typography.h3.fontSize!;
 
 	return (
-		<View
-			style={{
-				flex: 1,
-				paddingVertical: 8,
-			}}
-		>
-			<PlaceholderLine height={height - 9} noMargin {...props} />
-		</View>
+		<PlaceholderLine
+			height={height - 9}
+			noMargin
+			{...props}
+			style={[
+				{ marginBottom: 8, marginTop: 8, borderRadius: theme.shape.borderRadius },
+				props.style,
+			]}
+		/>
 	);
 };

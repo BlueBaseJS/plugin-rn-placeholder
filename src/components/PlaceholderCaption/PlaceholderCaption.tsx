@@ -1,7 +1,6 @@
-import { View, ViewProps } from 'react-native';
-
 import { PlaceholderLine } from 'rn-placeholder';
 import React from 'react';
+import { ViewProps } from 'react-native';
 import { useTheme } from '@bluebase/core';
 
 export interface PlaceholderCaptionProps {
@@ -18,13 +17,14 @@ export const PlaceholderCaption = (props: PlaceholderCaptionProps) => {
 	const height = theme.typography.caption.fontSize!;
 
 	return (
-		<View
-			style={{
-				flex: 1,
-				paddingVertical: 2,
-			}}
-		>
-			<PlaceholderLine height={height - 2} noMargin {...props} />
-		</View>
+		<PlaceholderLine
+			height={height - 2}
+			noMargin
+			{...props}
+			style={[
+				{ marginBottom: 2, marginTop: 2, borderRadius: theme.shape.borderRadius },
+				props.style,
+			]}
+		/>
 	);
 };
