@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.0.0...v1.0.1) (2020-01-09)
+
+### Bug Fixes
+
+-   Removed View wrappers ([81f41c4](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/81f41c4))
+
 # 1.0.0 (2020-01-04)
 
 ### Bug Fixes
