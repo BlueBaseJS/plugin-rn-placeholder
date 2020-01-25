@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.1.0...v1.1.1) (2020-01-25)
+
+### Bug Fixes
+
+-   **PlaceholderAvatar:** Added to exports ([7fee4b6](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/7fee4b6))
+
 # [1.1.0](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.0.1...v1.1.0) (2020-01-25)
 
 ### Features
