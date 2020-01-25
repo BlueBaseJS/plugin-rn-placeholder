@@ -1,39 +1,28 @@
-import { PlaceholderLine, PlaceholderMedia } from 'rn-placeholder';
-import { Theme, useTheme } from '@bluebase/core';
 import { View, ViewStyle } from 'react-native';
+import { getComponent, useTheme } from '@bluebase/core';
 
+import { ListAvatarDefaultProps } from '@bluebase/components';
+import { PlaceholderAvatarProps } from '../PlaceholderAvatar';
+import { PlaceholderBody1Props } from '../PlaceholderBody1';
+import { PlaceholderBody2Props } from '../PlaceholderBody2';
+import { PlaceholderMedia } from 'rn-placeholder';
 import React from 'react';
 
-export interface PlaceholderListItemStyles {
-	root: ViewStyle;
-	content: ViewStyle;
-
-	media: ViewStyle;
-	mediaIcon: ViewStyle;
-
-	itemBox: ViewStyle;
-
-	title: ViewStyle;
-	description: ViewStyle;
-
-	titleLineHeight: number;
-	descriptionLineHeight: number;
-}
+const PlaceholderAvatar = getComponent<PlaceholderAvatarProps>('PlaceholderAvatar');
+const PlaceholderBody1 = getComponent<PlaceholderBody1Props>('PlaceholderBody1');
+const PlaceholderBody2 = getComponent<PlaceholderBody2Props>('PlaceholderBody2');
 
 export interface PlaceholderListItemProps {
+	title?: boolean;
 	description?: boolean;
+	avatar?: boolean;
 
 	/**
 	 * Variants to change avatar's shape
 	 */
-
 	variant?: 'circle' | 'rounded' | 'icon' | 'square';
 
-	avatar?: boolean;
-
 	style?: ViewStyle;
-
-	styles?: Partial<PlaceholderListItemStyles>;
 }
 
 /**
@@ -42,103 +31,65 @@ export interface PlaceholderListItemProps {
 
 export const PlaceholderListItem = (props: PlaceholderListItemProps) => {
 	const { theme } = useTheme();
-	const { avatar, description, variant } = props;
-	const styles = props.styles! as PlaceholderListItemStyles;
-
-	const getBorderRadius = () => {
-		if (variant === 'circle') {
-			return 50;
-		}
-		if (variant === 'icon') {
-			return theme.shape.borderRadius;
-		}
-		if (variant === 'rounded') {
-			return theme.shape.borderRadius;
-		} else {
-			return undefined;
-		}
-	};
+	const { avatar, description, title, variant, style } = props;
 
 	return (
-		<View testID="skeleton-root" style={{ ...styles.root }}>
+		<View
+			testID="skeleton-root"
+			style={{
+				alignItems: 'center',
+				flexDirection: 'row',
+				// paddingHorizontal: theme.spacing.unit * 2,
+				paddingVertical: theme.spacing.unit * 1.25,
+				...style,
+			}}
+		>
 			{avatar ? (
-				<PlaceholderMedia
-					isRound={variant === 'circle'}
-					style={{
-						...styles.media,
-						...(variant === 'icon' && styles.mediaIcon),
-						borderRadius: getBorderRadius(),
-					}}
-					testID="skeleton-avatar"
-				/>
-			) : null}
-			<View style={{ ...styles.itemBox }}>
-				<View style={styles.title}>
-					<PlaceholderLine
-						width={16}
-						height={styles.titleLineHeight}
-						noMargin
-						testID="skeleton-title"
+				variant === 'icon' ? (
+					<PlaceholderMedia
+						style={{
+							alignSelf: 'center',
+							borderRadius: theme.shape.borderRadius,
+							height: theme.spacing.unit * 3,
+							marginHorizontal: theme.spacing.unit * 2,
+							width: theme.spacing.unit * 3,
+						}}
+						testID="skeleton-avatar"
 					/>
-				</View>
+				) : (
+					<PlaceholderAvatar
+						{...ListAvatarDefaultProps}
+						variant={variant}
+						style={{ marginLeft: theme.spacing.unit * 2 }}
+					/>
+				)
+			) : null}
+			<View
+				style={{
+					flex: 1,
+					paddingLeft: theme.spacing.unit * 2,
+				}}
+			>
+				{title ? (
+					<PlaceholderBody1
+						width={16}
+						style={{ marginTop: theme.spacing.unit / 2, marginBottom: theme.spacing.unit / 2 }}
+					/>
+				) : null}
 				{description ? (
-					<View style={styles.description}>
-						<PlaceholderLine
-							width={32}
-							height={styles.descriptionLineHeight}
-							noMargin
-							testID="skeleton-description"
-						/>
-					</View>
+					<PlaceholderBody2
+						width={32}
+						style={{ marginTop: theme.spacing.unit / 2, marginBottom: theme.spacing.unit / 2 }}
+					/>
 				) : null}
 			</View>
 		</View>
 	);
 };
 
-/**
- * default props of PlaceholderListItem
- * if no props are given then
- * PlaceholderListItem will render with
- * these props
- */
 PlaceholderListItem.defaultProps = {
 	avatar: false,
 	description: false,
+	title: true,
 	variant: 'circle',
 };
-
-PlaceholderListItem.defaultStyles = (theme: Theme): PlaceholderListItemStyles => ({
-	content: {
-		paddingHorizontal: theme.spacing.unit * 2,
-	},
-	media: {
-		alignSelf: 'center',
-		height: theme.spacing.unit * 5,
-		marginLeft: theme.spacing.unit * 2,
-		width: theme.spacing.unit * 5,
-	},
-	mediaIcon: {
-		height: theme.spacing.unit * 3,
-		marginRight: theme.spacing.unit * 2,
-		width: theme.spacing.unit * 3,
-	},
-	root: {
-		alignItems: 'center',
-		flexDirection: 'row',
-		// paddingHorizontal: theme.spacing.unit * 2,
-		paddingVertical: theme.spacing.unit * 1.25,
-	},
-
-	itemBox: {
-		flex: 1,
-		paddingLeft: theme.spacing.unit * 2,
-	},
-
-	title: { marginVertical: theme.spacing.unit / 2 },
-
-	description: { marginVertical: theme.spacing.unit / 2 },
-
-	descriptionLineHeight: theme.typography.body2.fontSize as number,
-	titleLineHeight: theme.typography.body1.fontSize as number,
-});

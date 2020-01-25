@@ -108,17 +108,7 @@ stories
 		<>
 			<BlueBaseApp plugins={[Plugin, MUIplugin]}>
 				<Placeholder Animation={Fade}>
-					<PlaceholderListItem
-						avatar={true}
-						description={true}
-						variant="icon"
-						styles={{
-							media: {
-								height: 26,
-								width: 24,
-							},
-						}}
-					/>
+					<PlaceholderListItem avatar={true} description={true} variant="icon" />
 				</Placeholder>
 			</BlueBaseApp>
 			<List.Item left={<List.Icon name="delete" />} title="Sample" description="Reference" />
@@ -128,17 +118,7 @@ stories
 		<>
 			<BlueBaseApp plugins={[Plugin, MUIplugin]}>
 				<Placeholder Animation={Fade}>
-					<PlaceholderListItem
-						avatar={true}
-						description={true}
-						variant="rounded"
-						styles={{
-							media: {
-								height: 32,
-								width: 32,
-							},
-						}}
-					/>
+					<PlaceholderListItem avatar={true} description={true} variant="rounded" />
 				</Placeholder>
 			</BlueBaseApp>
 			<List.Item

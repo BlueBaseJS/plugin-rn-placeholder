@@ -29,6 +29,19 @@ describe('PlaceholderListItem', () => {
 		wrapper.unmount();
 	});
 
+	it('should not show title', async () => {
+		const wrapper = mount(
+			<BlueBaseApp plugins={[Plugin, MUIplugin]}>
+				<PlaceholderListItem title={false} />
+			</BlueBaseApp>
+		);
+		await waitForElement(wrapper, PlaceholderListItem);
+
+		expect(wrapper.find('PlaceholderBody1').exists()).toBe(false);
+
+		wrapper.unmount();
+	});
+
 	it('should show description', async () => {
 		const wrapper = mount(
 			<BlueBaseApp plugins={[Plugin, MUIplugin]}>
@@ -38,7 +51,7 @@ describe('PlaceholderListItem', () => {
 		await waitForElement(wrapper, PlaceholderListItem);
 
 		expect(wrapper.find('[testID="skeleton-avatar"]')).toHaveLength(0);
-		expect(wrapper.find('[testID="skeleton-description"]')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderBody2')).toHaveLength(1);
 
 		wrapper.unmount();
 	});
@@ -50,8 +63,8 @@ describe('PlaceholderListItem', () => {
 		);
 		await waitForElement(wrapper, PlaceholderListItem);
 
-		expect(wrapper.find('[testID="skeleton-avatar"]')).toHaveLength(1);
-		expect(wrapper.find('[testID="skeleton-description"]')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderAvatar')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderBody2')).toHaveLength(1);
 
 		wrapper.unmount();
 	});
@@ -63,8 +76,8 @@ describe('PlaceholderListItem', () => {
 		);
 		await waitForElement(wrapper, PlaceholderListItem);
 
-		expect(wrapper.find('[testID="skeleton-avatar"]')).toHaveLength(1);
-		expect(wrapper.find('[testID="skeleton-description"]')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderAvatar')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderBody2')).toHaveLength(1);
 
 		wrapper.unmount();
 	});
@@ -77,7 +90,7 @@ describe('PlaceholderListItem', () => {
 		await waitForElement(wrapper, PlaceholderListItem);
 
 		expect(wrapper.find('[testID="skeleton-avatar"]')).toHaveLength(1);
-		expect(wrapper.find('[testID="skeleton-description"]')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderBody2')).toHaveLength(1);
 
 		wrapper.unmount();
 	});
@@ -94,8 +107,8 @@ describe('PlaceholderListItem', () => {
 		);
 		await waitForElement(wrapper, PlaceholderListItem);
 
-		expect(wrapper.find('[testID="skeleton-avatar"]')).toHaveLength(1);
-		expect(wrapper.find('[testID="skeleton-description"]')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderAvatar')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderBody2')).toHaveLength(1);
 
 		wrapper.unmount();
 	});
@@ -113,7 +126,7 @@ describe('PlaceholderListItem', () => {
 		await waitForElement(wrapper, PlaceholderListItem);
 
 		expect(wrapper.find('[testID="skeleton-avatar"]')).toHaveLength(1);
-		expect(wrapper.find('[testID="skeleton-description"]')).toHaveLength(1);
+		expect(wrapper.find('PlaceholderBody2')).toHaveLength(1);
 
 		wrapper.unmount();
 	});

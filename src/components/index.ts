@@ -1,5 +1,6 @@
 import { Placeholder, PlaceholderLine, PlaceholderMedia } from 'rn-placeholder';
 
+import { PlaceholderAvatar } from './PlaceholderAvatar';
 import { PlaceholderBody1 } from './PlaceholderBody1';
 import { PlaceholderBody2 } from './PlaceholderBody2';
 import { PlaceholderCaption } from './PlaceholderCaption';
@@ -19,6 +20,7 @@ export const components = {
 	PlaceholderLine,
 	PlaceholderMedia,
 
+	PlaceholderAvatar,
 	PlaceholderBody1,
 	PlaceholderBody2,
 	PlaceholderCaption,
