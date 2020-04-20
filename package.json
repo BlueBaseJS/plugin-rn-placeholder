@@ -38,6 +38,7 @@
     "fix:md": "remark . -o",
     "test": "run-s build test:*",
     "test:only": "jest --coverage",
+		"test-heavy": "node --max_old_space_size=10000 node_modules/.bin/jest --coverage",
     "test:lint": "npm run lint",
     "test:prettier": "prettier \"src/**/*.ts\" --list-different",
     "test:md": "remark . -f",
