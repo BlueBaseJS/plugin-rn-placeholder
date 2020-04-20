@@ -1,3 +1,14 @@
+# [1.2.0](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.1.1...v1.2.0) (2020-04-20)
+
+### Bug Fixes
+
+-   **Placeholder:** Add test of rn placeholder ([249112d](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/249112d))
+-   **Release:** Release the plugin rn placeholder ([a876d64](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/a876d64))
+
+### Features
+
+-   Better exports ([c238f93](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/c238f93))
+
 ## [1.1.1](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.1.0...v1.1.1) (2020-01-25)
 
 ### Bug Fixes
