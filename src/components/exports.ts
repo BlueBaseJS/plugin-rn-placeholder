@@ -14,6 +14,7 @@ export * from './PlaceholderAvatar';
 export * from './PlaceholderBody1';
 export * from './PlaceholderBody2';
 export * from './PlaceholderCaption';
+export * from './PlaceholderCard';
 export * from './PlaceholderH1';
 export * from './PlaceholderH2';
 export * from './PlaceholderH3';

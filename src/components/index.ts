@@ -3,6 +3,7 @@ import { PlaceholderAvatar } from './PlaceholderAvatar';
 import { PlaceholderBody1 } from './PlaceholderBody1';
 import { PlaceholderBody2 } from './PlaceholderBody2';
 import { PlaceholderCaption } from './PlaceholderCaption';
+import { PlaceholderCard } from './PlaceholderCard';
 import { PlaceholderH1 } from './PlaceholderH1';
 import { PlaceholderH2 } from './PlaceholderH2';
 import { PlaceholderH3 } from './PlaceholderH3';
@@ -22,6 +23,7 @@ export const components = {
 	PlaceholderBody1,
 	PlaceholderBody2,
 	PlaceholderCaption,
+	PlaceholderCard,
 	PlaceholderH1,
 	PlaceholderH2,
 	PlaceholderH3,
