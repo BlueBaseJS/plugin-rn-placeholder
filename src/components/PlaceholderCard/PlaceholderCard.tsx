@@ -15,6 +15,7 @@ export interface PlaceholderCardStyles {
 export interface PlaceholderCardProps {
 	/** Width of the card */
 	width: number;
+	mediaHeight?: number;
 	style?: StyleProp<ViewStyle>;
 	styles?: Partial<PlaceholderCardStyles>;
 }
@@ -42,13 +43,13 @@ const defaultStyles = (theme: Theme): PlaceholderCardStyles => ({
  * PlaceholderCard used for listing Places. A place represents a physical location in the Mevris Platform.
  */
 export const PlaceholderCard = (props: PlaceholderCardProps) => {
-	const { width } = props;
+	const { width, mediaHeight } = props;
 	const styles = useStyles<PlaceholderCardStyles>('PlaceholderCard', props, defaultStyles);
 
 	return (
 		<Card style={{ ...styles.root, width }}>
 			<Placeholder Animation={Fade}>
-				<PlaceholderMedia size={width} style={{ borderRadius: 0 }} isRound={false} />
+				<PlaceholderMedia size={width} style={{ borderRadius: 0, height: mediaHeight ?? width }} isRound={false} />
 				<View style={styles.content}>
 					<PlaceholderLine width={70} height={styles.titleHeight} style={styles.title} noMargin />
 					<PlaceholderLine width={30} height={styles.descriptionHeight} noMargin />
