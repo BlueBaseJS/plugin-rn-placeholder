@@ -1,3 +1,9 @@
+# [1.4.0](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.3.0...v1.4.0) (2022-07-24)
+
+### Features
+
+-   **PlaceholderCard:** Added mediaHeight prop ([f0667b8](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/f0667b8))
+
 # [1.3.0](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.2.0...v1.3.0) (2022-06-04)
 
 ### Features
