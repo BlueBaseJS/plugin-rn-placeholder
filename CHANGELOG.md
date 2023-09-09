@@ -1,3 +1,9 @@
+# [1.5.0](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.4.0...v1.5.0) (2023-09-09)
+
+### Features
+
+-   Expo 49 ([87f6a06](https://github.com/BlueBaseJS/plugin-rn-placeholder/commit/87f6a06))
+
 # [1.4.0](https://github.com/BlueBaseJS/plugin-rn-placeholder/compare/v1.3.0...v1.4.0) (2022-07-24)
 
 ### Features
