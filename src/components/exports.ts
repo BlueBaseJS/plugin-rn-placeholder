@@ -1,12 +1,11 @@
 export {
-	AnimationConsumer,
-	Consumer,
 	Fade,
 	Loader,
 	Progressive,
-	Provider,
 	Shine,
 	ShineOverlay,
+	AnimationContext,
+	useAnimation,
 } from 'rn-placeholder';
 
 export * from './Placeholder';
